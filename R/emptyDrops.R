@@ -351,8 +351,8 @@ testEmptyDrops <- function(m, lower=100, niters=10000, test.ambient=FALSE, ignor
 .estimate_alpha <- function(mat, prop, totals, interval=c(0.01, 10000))
 # Efficiently finds the MLE for the overdispersion parameter of a Dirichlet-multinomial distribution.
 {
-    i <- nzwhich(x, arr.ind=TRUE)[,1]
-    x <- nzvals(x)
+    i <- nzwhich(mat, arr.ind=TRUE)[,1]
+    x <- nzvals(mat)
 
     per.prop <- prop[i] 
     LOGLIK <- function(alpha) {
